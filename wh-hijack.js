@@ -103,14 +103,16 @@ function iidEquals(a1, b1) {
 
 function get_audio_src(audio_src_ptr) {
   try {
+    console.log("audio_src_ptr : " + audio_src_ptr);
     const audio_src = audio_src_ptr.readPointer(); // SLDataSource
-    console.log("audio src :", audio_src);
+    console.log("audio_src : " + audio_src);
     const p_locator = audio_src.readPointer();
-    console.log("locator address : ", p_locator);
-    const locator_type = p_locator.readU32();
-    console.log("Locator type : " + locator_type);
+    console.log("p_locator : " + p_locator);
     const p_format = audio_src.add(Process.pointerSize).readPointer();
-    console.log("format address : ", p_format);
+    console.log("p_format : " + p_format);
+    if (p_format == 0x0 || p_format == 0xffffffff) {
+      return;
+    }
     const format_type     = p_format.readU32();
     const num_channels    = p_format.add(4).readU32();
     const samples_per_sec  = p_format.add(8).readU32();
@@ -128,7 +130,6 @@ function get_audio_src(audio_src_ptr) {
   } catch (e) {
     console.error("PCM format read error:", e);
   }
-
 }
 
 function hook_realize(realize) {
