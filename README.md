@@ -11,7 +11,7 @@ This project is created to record the voice call from WhatsApp
     4. adb  
     5. zip
 
-# What you need build from this project to record the whatsapp voice call from this project  
+# What you need to build from this project to record the whatsapp voice call  
   1. An executable named agent-mcs for your Android device (see the steps below for building instructions)  
   2. A Magisk module named agent-mcs.zip containing two executables, first agent-mcs and second frida-server (see the steps below for building instructions)  
 
@@ -68,3 +68,10 @@ This project is created to record the voice call from WhatsApp
   5. Make sure both machines are connected to the same network  
   6. Get the ip address of the Android device  
   7. Run the client executable like this : ./client ip-address port message  
+
+# Resources used in this project  
+  1. Frida-tools : https://github.com/frida/frida-tools  
+  2. Frida-server : https://github.com/frida/frida-tools  
+  3. Magisk : https://github.com/topjohnwu/Magisk  
+  4. Magisk module : https://topjohnwu.github.io/Magisk/guides.html  
+
