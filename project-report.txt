@@ -6,6 +6,7 @@ Some of the challenges include,
 4. How to know which functions should I intercept to get the Audio buffers involved in the whatsapp voice call ? -- completed  
 5. How to get the audio parameters ? -- tried  
 6. How to convert raw PCM audio to the audible formats like wav or mp3 ? -- tried  
+7. How integrate the frida-gadget with Magisk ? -- tried
 
 Initially my plan was to use the combination of Magisk+Zygisk+LSPosed to intercept the Audio specific functions of WhatsApp. So I started rooting my device using Magisk.  
 First I rooted my device (Motorola Edge 60 fusion Android 15) using the latest version of Magisk. Magisk was unstable in my device therefore I tried different versions of Magisk to check the stability but no Magisk vrsion was stable.  
