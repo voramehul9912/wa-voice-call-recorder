@@ -1,0 +1,31 @@
+When I started working on this project, I faced few big challenges.  
+Some of the challenges include,  
+1. How to root the Android device ? -- completed  
+2. How to inject the code into the android application ? -- completed  
+3. How to exploit the binaries to know about the symbols ?  -- completed  
+4. How to know which functions should I intercept to get the Audio buffers involved in the whatsapp voice call ? -- completed  
+5. How to get the audio parameters ? -- tried  
+6. How to convert raw PCM audio to the audible formats like wav or mp3 ? -- tried  
+
+Initially my plan was to use the combination of Magisk+Zygisk+LSPosed to intercept the Audio specific functions of WhatsApp. So I started rooting my device using Magisk.  
+First I rooted my device (Motorola Edge 60 fusion Android 15) using the latest version of Magisk. Magisk was unstable in my device therefore I tried different versions of Magisk to check the stability but no Magisk vrsion was stable.  
+Then I tried Kitsune-Magisk and it was stable.  
+After that I tried KernelSU and APatch but they were also unstable with my device.  
+Thus I had to go with Kitsune.  
+The challenges did not stop here. I tried to install LSPosed and I noticed that it is not stable and upon investigation I found that it is because of the unstability of Zygisk.  
+So my plan of using Magisk+Zygisk+LSPosed failed.  
+Now I need to go for another plan.  
+So I investigated and found the alternative which is Frida.  
+I never worked with Frida so I startd to learn about it.  
+When I tried with the latest version of Frida, it disappointed me as it was unstable in my device. So I tried older version of Frida and fortunately Frida-16.7.19 worked for me.  
+Then the next challenge was to exploit the binary, fortunately I learned it quickly and practiced to intrcept some Java, JNI and exported native functions using Frida.  
+Then I started investigating binaries of WhatsApp and found some symbols that I can intercept to get the Audio buffers.  
+fortunately I was able to get the raw PCM audio buffers.  
+But when I converted it to wav format using some python script, it again disappointed me. The audio was very unclear.  
+I was again stuck.  
+I became frustrated after investigating how to resolve this problem.  
+Then I switched to solve another problem of integrating all of these pieces to build a whole system.  
+I tried to use frida-gadget but it didn't work for me.  
+I was stuck again and this time time was also over.  
+This was a very nice assignment. I really learned so many new things like - how to root using Magisk, KernelSU, APatch; how to create a magisk module; how to create a server and client; difference between TCP and UDP; how the IPC works; how to intercept the process using Frida; how to exploit the binaries; etc.  
+Thanks for the nice assignment. It was really great.  
